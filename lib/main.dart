@@ -32,10 +32,10 @@ class WeatherApp extends StatelessWidget {
                     ),
                     debugShowCheckedModeBanner: false,
                     home: AnimatedSplashScreen(
-                      backgroundColor: Color(0xffDCDCDC),
+                      backgroundColor: const Color(0xffDCDCDC),
                       splash: Lottie.asset('images/splash_screen.json'),
                       splashIconSize: double.infinity,
-                      nextScreen: HomeView(),
+                      nextScreen: const HomeView(),
                       duration: 3500,
                     ),
                   );

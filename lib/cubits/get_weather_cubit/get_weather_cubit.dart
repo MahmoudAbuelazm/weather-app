@@ -28,18 +28,13 @@ class GetWeatherCubit extends Cubit<WeatherState> {
   void getWeatherFromLocation() async {
     emit(WeatherLoadingState());
     try {
-      print('success');
-      // location =
-      // 'Lat: ${position.latitude} , Long: ${position.longitude}';
       List<Placemark> placemark = await GetLocation().getLocation();
       weatherModel = await WeatherService(Dio())
           .getCurrentWeather(cityName: placemark[0].locality!);
-      // weatherModel = weather;
-      print(placemark[0].locality!);
+     
 
       emit(LoadedWeatherState(weatherModel!));
     } on Exception catch (e) {
-      print('error');
       emit(FailureWeatherState(e.toString()));
     }
   }

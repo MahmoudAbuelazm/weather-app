@@ -79,8 +79,8 @@ class SearchView extends StatelessWidget {
                   ),
                   child: IconButton(
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                          CircleBorder(
+                        shape: WidgetStateProperty.all(
+                          const CircleBorder(
                             side: BorderSide(
                               width: 2,
                               color: Colors.black,
@@ -91,7 +91,9 @@ class SearchView extends StatelessWidget {
                       onPressed: () {
                         var getWeatherCubit =
                             BlocProvider.of<GetWeatherCubit>(context);
-                        getWeatherCubit.getWeatherFromLocation();
+                        getWeatherCubit.getWeatherFromLocation(
+                         
+                        );
                         Navigator.pop(context);
                       },
                       icon: const Icon(Icons.location_on_outlined)),
